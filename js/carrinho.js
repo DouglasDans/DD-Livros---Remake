@@ -1,9 +1,53 @@
-function Add(){
-    alert("Você tem certeza que deseja adicionar o produto?")
-    document.querySelector('.wrapper');
-    document.getElementById("txtn1").value;
-    document.createElement("tr")
-    document.createElement("th")
-    document.createTextNode('24,99');
-    document.createElement("td");
+var valorTotal = 0;
+function Salvar(){
+    document.getElementById('txtNomeCliente').value = document.getElementById('txtNome');
+
+    var i;
+    for( i = 0; i < document.formVenda.rdEntrega.length;i++){
+        if (document.formVenda.rdEntrega[i].checked)
+            break;
+    }
+    if  (parseInt(document.formVenda.rdEntrega[i].value) == 1)
+        document.getElementById("txtEntregaSelec").value = document.formVendaslcFormaPgto
+}
+function addProduto(){
+    var tabela = document.getElementById('tbProduto');
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    var td3 = document.createElement("td");
+    var td4 = document.createElement("td");
+
+
+    var tr = document.createElement("tr");
+    var cod = parseInt(document.getElementById('codProduto').value);
+    switch(cod){
+        case 1:
+            var descricao = "A Guerra Dos Consoles";
+            var preco = 24.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+    }
+    var descricaoNode = document.createTextNode(descricao);
+    var precoNode = document.createTextNode(preco);
+    var qtdeNode = document.createTextNode(qtde);
+    var vtNode = document.createTextNode(valorTotal);
+
+    td1.appendChild(descricaoNode);
+    td2.appendChild(precoNode);
+    td3.appendChild(qtdeNode);
+    td4.appendChild(vtNode);
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tr.appendChild(td4);
+
+    tabela.appendChild(tr);
+
+    document.getElementById('codProduto').value = '';
+    document.getElementById('qtde').value = '';
+    document.getElementById('codProduto').focus();
+
+    document.getElementById('txtValorTotal').value = valortotal;
 }

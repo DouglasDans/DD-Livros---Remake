@@ -12,7 +12,7 @@
 
         
     </head>
-    <body>
+    <body class="bg-light">
       <header class="justify-content-end">
         <div class="nav-container justify-content-end ">
           <nav class="navbar navbar-expand-md navbar-white fixed-top p-0 justify-content-end nav-color p-2">
@@ -48,126 +48,66 @@
        </div>
         </header>
 
+        <main style="width: 100%;">
+          <br>
+          <div class="bg-white p-3 pl-5 pr-5 rounded-sm mt-2" style="margin-bottom: 5px;">
+            <img src="img/loadsc7.png" style="height: 70px;" class="rounded-circle shadow">
+            <font class="mt-3 pl-3" style="font-weight:bold; font-size:30px">Olá Vanessa Ferraz</font>
+            
+          </div>
+          <div class="row bg-white p-2 m-0">
+            <div class="col p-3 bg-light rounded-sm">
+              <form name="fromVenda">
+                <label>Nome:</label>
+                <input type="text" class="form-control" id="txtNome" placeholder="Digite seu Nome">
+                <br>
 
+                <label>Código do Produto:</label>
+                <input type="text" class="form-control" id="codProduto" placeholder="Digite o código do Produto">
 
-
-        <div class="container pt-3 pb-3">
-          <div class="row">
-            <div class="col-3">
-              <div class="card shadow">
-                <div class="card-body">
-                  <div class="text-center">
-                    <h6 style="font-weight:bold">Informações do Cliente</h6>
-                    <br>
-                    <img src="img/loadsc7.png" class="rounded-circle user" style="height: 150px;">
+                <button class="btn mt-1 mb-3 btn-sm  btn-info dropdown-toggle dropdown-toggle-split" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Onde eu acho esse código?
+                  </button> 
+                  <div class="dropdown-menu shadow p-2 text-justify" aria-labelledby="dropdownMenu2">
+                      <font class="mt-3 pl-3 text-center" style="font-weight:bold">Ele é encontrado junto dos seus respectivos produtos</font><br>
+                    <img src="img/AjudaBlur.png" height="180px" alt="Tela de Ajuda">
                   </div>
-                  <br>
-                  <div>
-                    <small><font style="font-weight: bold;">RM: </font>19184</small>
-                    <br>
-                    <small><font style="font-weight: bold;">Nome: </font> DOUGLAS ADAO NASCIMENTO DE SOUSA</small>
-                    <br>
-                    <small><font style="font-weight: bold;">Habitação:</font></small>
-                    <select class="form-control form-control-sm">
-                      <option>MÉDIO TEC EM DESENVOLVIMENTO DE SISTEMAS</option>
-                    </select>
-                    <br>                    
-                    <small><font style="font-weight: bold;">Sit. Matrícula: </font>CURSANDO</small>
-                    <br>
-                    <small><font style="font-weight: bold;">Semestre OC: </font>2019</small>
-                    <br>
-                    <small><font style="font-weight: bold;">Módulo/Série: </font>1ª SÉRIE</small>
+                <br>
+
+                <label>Quantidade:</label>
+                <input type="text" class="form-control" id="qtde" placeholder="Digite a quantidade">
+                <br>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
                   </div>
-                </div>
-              </div>
+
+                <button type="button" class="btn btn-success" value="Add" onclick="addProduto()">Confirmar</button>
+              </form>
             </div>
 
+
             <div class="col">
-                <div class="card shadow">
-                  <div class="card-body">
-  
-                    <div class="row">
-                      <div class="col-6 mr-0">
-                        <div class="card">
-                          <div class="card-body p-0">
-
-
-
-                            <div class="bg-dark border rounded-sm">
-                              <h4 class="text-center p-2 text-white">Adicionar Produto</h4>
-                              <form name="formcalcular" class="bg-light p-4 ">
-                                  <div class="form-group">
-                                      <label for="InputName">Número do produto</label>
-                                      <input type="text" class="form-control" id="txtn1" placeholder="Seu Nome">
-                                  </div>
-                                  <button type="button" class="btn btn-primary" onclick="Add()">Adicionar</button>
-                              </form>
-                            </div> 
-
-
-
-
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6 ml-0">
-                        <div class="card">
-                            <font class=" p-0 text-white text-center bg-dark " style=" font-weight: bold;border-top-right-radius: 3px;border-top-left-radius: 3px;">Produtos Adicionados ao Carrinho</font>
-                          <div class="card-body p-0">
-                              
-                              <table class="table table-striped m-0" style="font-size:13px;">
-                                  <thead class="thead-dark">
-                                    <tr>
-                                      <th scope="col">Data</th>
-                                      <th scope="col">Assunto</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody class="wrapper">
-                                    <tr>
-                                      <th scope="row">25/07/2019</th>
-                                      <td>APROVEITAMENTO DE ESTUDOS 2ºSEMESTRE/2019</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">24/07/2019</th>
-                                      <td>Jacob</td>
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">22/03/2019</th>
-                                      <td>Larry</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">28/02/2019</th>
-                                        <td>Larry</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">06/11/2018</th>
-                                        <td>Larry</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">23/07/2018</th>
-                                        <td>Larry</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">06/03/2018</th>
-                                        <td>Larry</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">06/02/2017</th>
-                                        <td>Larry</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-  
-                  </div>
-                </div>
-              </div>
+              <form name="fromVenda" class="rounded-sm bg-light">
+                <table class="table table-striped rounded-sm" id="tbProduto">
+                    <thead class="rounded-sm thead-dark " >
+                      <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Quantidade</th>
+                        <th scope="col">Valor Total</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </form>
             </div>
           </div>
 
+        </main>
+
+
+        
           <footer class="text-white">
               <div class="p-3 text-left float-left">
                 <img src="img/DD-Rmk-W.png" height="30px">
