@@ -41,7 +41,14 @@ function addProduto(){
             valorTotal += (parseInt(qtde)* (preco));
             break;
 
-
+        default:
+            
+            var descricao = "Indefinido";
+            var preco = 0.0;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            cod = 0;
+            qtde=0;
     }
     var codNode = document.createTextNode(cod);
     var descricaoNode = document.createTextNode(descricao);
