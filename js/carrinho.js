@@ -27,6 +27,20 @@ function addProduto(){
             var qtde = document.getElementById("qtde").value;
             valorTotal += (parseInt(qtde)* (preco));
             break;
+        case 2:
+            var descricao = "Vingadores: A Cruzada das Cranças";
+            var preco = 59.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+        case 3:
+            var descricao = "Assassin´s Creed - Revelações";
+            var preco = 32.90;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+
+
     }
     var descricaoNode = document.createTextNode(descricao);
     var precoNode = document.createTextNode(preco);
