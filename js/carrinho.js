@@ -43,18 +43,18 @@ function addProduto(){
 
 
     }
-
+    var codNode = document.createTextNode(cod);
     var descricaoNode = document.createTextNode(descricao);
-    var precoNode = document.createTextNode(preco);
+    var precoNode = document.createTextNode(preco.toFixed(2));
     var qtdeNode = document.createTextNode(qtde);
-    var vtNode = document.createTextNode(valorTotal);
+    var vtNode = document.createTextNode(valorTotal.toFixed(2));
 
 
-    td1.appendChild(cod);
+    td1.appendChild(codNode);
     td2.appendChild(descricaoNode);
     td3.appendChild(precoNode);
     td4.appendChild(qtdeNode);
-    td4.appendChild(vtNode);
+    td5.appendChild(vtNode);
 
     tr.appendChild(td1);
     tr.appendChild(td2);
