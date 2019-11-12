@@ -16,6 +16,7 @@ function addProduto(){
     var td2 = document.createElement("td");
     var td3 = document.createElement("td");
     var td4 = document.createElement("td");
+    var td5 = document.createElement("td");
 
 
     var tr = document.createElement("tr");
@@ -42,20 +43,24 @@ function addProduto(){
 
 
     }
+
     var descricaoNode = document.createTextNode(descricao);
     var precoNode = document.createTextNode(preco);
     var qtdeNode = document.createTextNode(qtde);
     var vtNode = document.createTextNode(valorTotal);
 
-    td1.appendChild(descricaoNode);
-    td2.appendChild(precoNode);
-    td3.appendChild(qtdeNode);
+
+    td1.appendChild(cod);
+    td2.appendChild(descricaoNode);
+    td3.appendChild(precoNode);
+    td4.appendChild(qtdeNode);
     td4.appendChild(vtNode);
 
     tr.appendChild(td1);
     tr.appendChild(td2);
     tr.appendChild(td3);
     tr.appendChild(td4);
+    tr.appendChild(td5);
 
     tabela.appendChild(tr);
 
