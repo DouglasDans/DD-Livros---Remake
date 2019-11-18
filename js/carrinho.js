@@ -8,7 +8,9 @@ function Salvar(){
             break;
     }
     if  (parseInt(document.formVenda.rdEntrega[i].value) == 1)
-        document.getElementById("txtEntregaSelec").value = document.formVendaslcFormaPgto
+        document.getElementById("txtEntregaSelec").value = "Correios - Entrega em 20 Dias"
+    else if (parseInt(document.formVenda.rdEntrega[i].value)== 2)
+    document.getElementById('txtEntregaSelec').value = "Sedex - Entrega em 7 Dias"
 }
 function addProduto(){
     var tabela = document.getElementById('tbProduto');
