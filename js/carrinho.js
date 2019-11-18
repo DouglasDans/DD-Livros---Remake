@@ -40,9 +40,85 @@ function addProduto(){
             var qtde = document.getElementById("qtde").value;
             valorTotal += (parseInt(qtde)* (preco));
             break;
-
+         case 4:
+            var descricao = "Harry Potter E as Relíquias da Morte";
+            var preco = 30.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+        case 5:
+            var descricao = "Animais Fantásticos";
+            var preco = 35.90;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+         case 6:
+            var descricao = "Um Mais Um";
+            var preco = 15.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+         case 7:
+            var descricao = "Hellboy";
+            var preco = 10.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+         case 8:
+            var descricao = "As aventuras de Sherlock Holmes:";
+            var preco = 20.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+         case 9:
+            var descricao = "Star Wars : Provação";
+            var preco = 23.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+         case 10:
+            var descricao = "O Pequeno Príncipe";
+            var preco = 30.00;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+        case 11:
+            var descricao = "O SENHOR DOS ANÉIS: A SOCIEDADE DO ANEL";
+            var preco = 35.00;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;   
+        case 12:
+            var descricao = "Vingadores - A Queda";
+            var preco = 28.00;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+        case 13:
+            var descricao = "Rip Van Winkle";
+            var preco = 6.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;
+        case 14:
+            var descricao = "A Ilha Misteriosa";
+            var preco = 25.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;      
+        case 15:
+            var descricao = "Viagem ao Centro da Terra";
+            var preco = 28.00;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;    
+        case 16:
+            var descricao = "God Of War";
+            var preco = 39.99;
+            var qtde = document.getElementById("qtde").value;
+            valorTotal += (parseInt(qtde)* (preco));
+            break;    
         default:
-            
             var descricao = "Indefinido";
             var preco = 0.0;
             var qtde = document.getElementById("qtde").value;
