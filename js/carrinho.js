@@ -1,17 +1,82 @@
 var valorTotal = 0;
-function Salvar(){
-    document.getElementById('txtNomeCliente').value = document.getElementById('txtNome');
 
-    var i;
-    for( i = 0; i < document.formVenda.rdEntrega.length;i++){
-        if (document.formVenda.rdEntrega[i].checked)
-            break;
-    }
-    if  (parseInt(document.formVenda.rdEntrega[i].value) == 1)
-        document.getElementById("txtEntregaSelec").value = "Correios - Entrega em 20 Dias"
-    else if (parseInt(document.formVenda.rdEntrega[i].value)== 2)
-    document.getElementById('txtEntregaSelec').value = "Sedex - Entrega em 7 Dias"
-}
+function Salvar(){
+    document.getElementById('txtNomeCliente').value = document.getElementById('txtNome').value;
+
+    var email = document.getElementById("txtEmail").value;
+    document.getElementById('Email').value = email;
+
+    var cpfc = document.getElementById("txtCPF").value;
+    document.getElementById('CPF').value = cpfc;
+
+    //Errrado {
+    var sbTotal = parseFloat(document.getElementById('txtValorTotal').value);
+    var radioCorreio = document.getElementsByName("rdEntrega");
+    
+    if(radioCorreio.value == 1){
+        document.getElementById("txtEntr").value = "Correios - Acrécimo de R$ 10,00";
+        sbTotal += parseFloat(10.00); 
+      }else{
+        document.getElementById("txtEntr").value = "Sedex - Acrécimo de R$ 25,00";
+        sbTotal += parseFloat( 25.00);               
+     }
+    
+    document.getElementById('sbTotal').value += sbTotal.toFixed(2);
+
+    //}
+
+    slcPag = document.getElementById("slcFormaPagto");
+    if(slcPag.value == "1"){
+        document.getElementById("txtPag").value = "Transferencia";
+        par();
+        }else if(slcPag.value == "2"){
+        document.getElementById("txtPag").value = "Debito";
+        par();
+        }else if(slcPag.value == "3"){
+          document.getElementById("txtPag").value = "Credito";
+          par();
+          }
+          else if(slcPag.value == "4"){
+            document.getElementById("txtPag").value = "Boleto";
+            document.getElementById("txtPar").value = "Sem Parcelar - Somente A Vista";  
+            }
+
+
+            if(document.getElementById("checkNL").checked){
+                alert("Você receberá as novidades da DD Livros em seu e-mail")
+              }
+        }
+
+        
+    
+    function par(){
+        pp = document.getElementById('sbTotal').value;
+        slcPar = document.getElementById("slcFormaParc");
+        if(slcPar.value == "2"){
+          document.getElementById("txtPar").value = pp / 2;
+          document.getElementById("qPar").value = "2"
+          }else if(slcPar.value == "3"){
+          document.getElementById("txtPar").value = pp / 3;
+          document.getElementById("qPar").value = "3"
+          }else if(slcPar.value == "4"){
+            document.getElementById("txtPar").value = pp / 4;
+            document.getElementById("qPar").value = "4"
+            }
+            else if(slcPar.value == "5"){
+              document.getElementById("txtPar").value = pp / 5;
+              document.getElementById("qPar").value = "5"
+              }
+              else if(slcPar.value == "6"){
+                document.getElementById("txtPar").value = pp / 6;
+                document.getElementById("qPar").value = "6"
+                }
+                else{
+                  document.getElementById("txtPar").value = "Sem Parcelar";
+                  document.getElementById("qPar").value = "A Vista"                }
+              }
+
+         
+
 function addProduto(){
     var tabela = document.getElementById('tbProduto');
     var td1 = document.createElement("td");
@@ -28,19 +93,19 @@ function addProduto(){
             var descricao = "A Guerra Dos Consoles";
             var preco = 24.99;
             var qtde = document.getElementById("qtde").value;
-            valorTotal += (parseInt(qtde)* (preco));
+            valorTotal += (parseFloat(qtde)* (preco));
             break;
         case 2:
             var descricao = "Vingadores: A Cruzada das Cranças";
             var preco = 59.99;
             var qtde = document.getElementById("qtde").value;
-            valorTotal += (parseInt(qtde)* (preco));
+            valorTotal += (parseFloat(qtde)* (preco));
             break;
         case 3:
             var descricao = "Assassin´s Creed - Revelações";
             var preco = 32.90;
             var qtde = document.getElementById("qtde").value;
-            valorTotal += (parseInt(qtde)* (preco));
+            valorTotal += (parseFloat(qtde)* (preco));
             break;
          case 4:
             var descricao = "Harry Potter E as Relíquias da Morte";
@@ -121,16 +186,12 @@ function addProduto(){
             valorTotal += (parseInt(qtde)* (preco));
             break;    
         default:
-            var descricao = "Indefinido";
-            var preco = 0.0;
-            var qtde = document.getElementById("qtde").value;
-            valorTotal += (parseInt(qtde)* (preco));
-            cod = 0;
-            qtde=0;
+            alert('Este código de produto não existe')
     }
+
     var codNode = document.createTextNode(cod);
     var descricaoNode = document.createTextNode(descricao);
-    var precoNode = document.createTextNode(preco.toFixed(2));
+    var precoNode = document.createTextNode(preco);
     var qtdeNode = document.createTextNode(qtde);
     var vtNode = document.createTextNode(valorTotal.toFixed(2));
 
@@ -153,5 +214,9 @@ function addProduto(){
     document.getElementById('qtde').value = '';
     document.getElementById('codProduto').focus();
 
-    document.getElementById('txtValorTotal').value = valortotal;
+    document.getElementById('txtValorTotal').value = valorTotal;
+
 }
+
+
+ 
