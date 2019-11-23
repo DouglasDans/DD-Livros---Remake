@@ -11,15 +11,18 @@ function Salvar(){
 
     //Errrado {
     var sbTotal = parseFloat(document.getElementById('txtValorTotal').value);
-    var radioCorreio = document.getElementsByName("rdEntrega");
-    
-    if(radioCorreio.value == 1){
-        document.getElementById("txtEntr").value = "Correios - Acrécimo de R$ 10,00";
-        sbTotal += parseFloat(10.00); 
-      }else{
-        document.getElementById("txtEntr").value = "Sedex - Acrécimo de R$ 25,00";
-        sbTotal += parseFloat( 25.00);               
-     }
+    var rates = document.getElementsByName("r1");
+
+    for(var i = 0; i < rates.length; i++){
+        if(rates[0].checked){
+            document.getElementById("txtEntr").value = "Correios - Acrécimo de R$ 10,00";
+            sbTotal += parseFloat(10.00); 
+        } else if(rates[1].checked){
+            document.getElementById("txtEntr").value = "Sedex - Acrécimo de R$ 25,00";
+            sbTotal += parseFloat( 25.00);    
+        }
+        break;
+    }
     
     document.getElementById('sbTotal').value += sbTotal.toFixed(2);
 
@@ -38,7 +41,7 @@ function Salvar(){
           }
           else if(slcPag.value == "4"){
             document.getElementById("txtPag").value = "Boleto";
-            document.getElementById("txtPar").value = "Sem Parcelar - Somente A Vista";  
+            document.getElementById("txtPar").value = "Sem Parcelas - Somente A Vista";  
             }
 
 
@@ -71,7 +74,7 @@ function Salvar(){
                 document.getElementById("qPar").value = "6"
                 }
                 else{
-                  document.getElementById("txtPar").value = "Sem Parcelar";
+                  document.getElementById("txtPar").value = "Sem Parcelas";
                   document.getElementById("qPar").value = "A Vista"                }
               }
 
